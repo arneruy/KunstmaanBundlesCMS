@@ -29,10 +29,10 @@ class LinePagePart extends AbstractPagePart
     }
 
     /**
-     * @return LinePagePartAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new LinePagePartAdminType();
+        return "kunstmaan_pagepart.form.type.line_pagepart_admin";
     }
 }

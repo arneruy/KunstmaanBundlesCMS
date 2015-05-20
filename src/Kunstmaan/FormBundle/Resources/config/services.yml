@@ -1,6 +1,20 @@
 parameters:
   kunstmaan_form.form_mailer.class: 'Kunstmaan\FormBundle\Helper\FormMailer'
   kunstmaan_form.form_handler.class: 'Kunstmaan\FormBundle\Helper\FormHandler'
+  kunstmaan_form.form.type.abstract_form_page_admin.class: 'Kunstmaan\FormBundle\Form\AbstractFormPageAdminType'
+  kunstmaan_form.form.type.boolean_form_submission.class: 'Kunstmaan\FormBundle\Form\BooleanFormSubmissionType'
+  kunstmaan_form.form.type.checkbox_pagepart_admin.class: 'Kunstmaan\FormBundle\Form\CheckboxPagePartAdminType'
+  kunstmaan_form.form.type.choice_form_submission.class: 'Kunstmaan\FormBundle\Form\ChoiceFormSubmissionType'
+  kunstmaan_form.form.type.choice_pagepart_admin.class: 'Kunstmaan\FormBundle\Form\ChoicePagePartAdminType'
+  kunstmaan_form.form.type.email_form_submission.class: 'Kunstmaan\FormBundle\Form\EmailFormSubmissionType'
+  kunstmaan_form.form.type.email_pagepart_admin.class: 'Kunstmaan\FormBundle\Form\EmailPagePartAdminType'
+  kunstmaan_form.form.type.file_form_submission.class: 'Kunstmaan\FormBundle\Form\FileFormSubmissionType'
+  kunstmaan_form.form.type.file_upload_pagepart_admin.class: 'Kunstmaan\FormBundle\Form\FileUploadPagePartAdminType'
+  kunstmaan_form.form.type.multi_line_text_pagepart_admin.class: 'Kunstmaan\FormBundle\Form\MultiLineTextPagePartAdminType'
+  kunstmaan_form.form.type.single_line_text_pagepart_admin.class: 'Kunstmaan\FormBundle\Form\SingleLineTextPagePartAdminType'
+  kunstmaan_form.form.type.string_form_submission.class: 'Kunstmaan\FormBundle\Form\StringFormSubmissionType'
+  kunstmaan_form.form.type.submit_button_pagepart_admin.class: 'Kunstmaan\FormBundle\Form\SubmitButtonPagePartAdminType'
+  kunstmaan_form.form.type.text_form_submission.class: 'Kunstmaan\FormBundle\Form\TextFormSubmissionType'
 
 services:
     kunstmaan_form.menu.adaptor.forms:
@@ -21,3 +35,73 @@ services:
         arguments: ["@doctrine.orm.entity_manager", "@router"]
         tags:
             - { name: 'kernel.event_listener', event: 'kunstmaan_node.configureSubActionMenu', method: 'onSubActionMenuConfigure' }
+
+    form.type.formpage:
+        class: "%kunstmaan_form.form.type.abstract_form_page_admin.class%"
+        tags:
+            - { name: form.type, alias: formpage }
+
+    form.type.kunstmaan_formbundle_booleanformsubmissiontype:
+        class: "%kunstmaan_form.form.type.boolean_form_submission.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_booleanformsubmissiontype }
+
+    form.type.kunstmaan_formbundle_checkboxpageparttype:
+        class: "%kunstmaan_form.form.type.checkbox_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_checkboxpageparttype }
+
+    form.type.kunstmaan_formbundle_choiceformsubmissiontype:
+        class: "%kunstmaan_form.form.type.choice_form_submission.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_choiceformsubmissiontype }
+
+    form.type.kunstmaan_formbundle_choicepageparttype:
+        class: "%kunstmaan_form.form.type.choice_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_choicepageparttype }
+
+    form.type.kunstmaan_formbundle_emailformsubmissiontype:
+        class: "%kunstmaan_form.form.type.email_form_submission.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_emailformsubmissiontype }
+
+    form.type.kunstmaan_formbundle_emailpageparttype:
+        class: "%kunstmaan_form.form.type.email_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_emailpageparttype }
+
+    form.type.kunstmaan_formbundle_fileformsubmissiontype:
+        class: "%kunstmaan_form.form.type.file_form_submission.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_fileformsubmissiontype }
+
+    form.type.kunstmaan_formbundle_fileuploadpageparttype:
+        class: "%kunstmaan_form.form.type.file_upload_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_fileuploadpageparttype }
+
+    form.type.kunstmaan_formbundle_singlelinetextpageparttype:
+        class: "%kunstmaan_form.form.type.multi_line_text_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_singlelinetextpageparttype }
+
+    form.type.kunstmaan_formbundle_singlelinetextpageparttype:
+        class: "%kunstmaan_form.form.type.single_line_text_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_singlelinetextpageparttype }
+
+    form.type.kunstmaan_formbundle_stringformsubmissiontype:
+        class: "%kunstmaan_form.form.type.string_form_submission.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_stringformsubmissiontype }
+
+    form.type.kunstmaan_formbundle_singlelinetextpageparttype:
+        class: "%kunstmaan_form.form.type.submit_button_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_singlelinetextpageparttype }
+
+    form.kunstmaan_formbundle_stringformsubmissiontype:
+        class: "%kunstmaan_form.form.type.text_form_submission.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_formbundle_stringformsubmissiontype }

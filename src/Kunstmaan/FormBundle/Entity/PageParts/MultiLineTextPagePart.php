@@ -204,11 +204,11 @@ class MultiLineTextPagePart extends AbstractFormPagePart
     /**
      * Returns the default backend form type for this page part
      *
-     * @return MultiLineTextPagePartAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new MultiLineTextPagePartAdminType();
+        return 'form.type.kunstmaan_formbundle_singlelinetextpageparttype';
     }
 
 }

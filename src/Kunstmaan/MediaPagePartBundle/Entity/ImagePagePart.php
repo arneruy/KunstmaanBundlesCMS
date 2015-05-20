@@ -154,10 +154,10 @@ class ImagePagePart extends AbstractPagePart
     }
 
     /**
-     * @return ImagePagePartAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new ImagePagePartAdminType();
+        return 'kunstmaan_mediabundle_imagepageparttype';
     }
 }

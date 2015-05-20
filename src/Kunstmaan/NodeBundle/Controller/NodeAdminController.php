@@ -559,13 +559,13 @@ class NodeAdminController extends Controller
 
         // Building the form
         $propertiesWidget = new FormWidget();
-        $pageAdminType = $page->getDefaultAdminType();
+        $pageAdminType = $this->container->get($page->getDefaultAdminType());
         if (!is_object($pageAdminType) && is_string($pageAdminType)) {
             $pageAdminType = $this->container->get($pageAdminType);
         }
         $propertiesWidget->addType('main', $pageAdminType, $page);
 
-        $nodeAdminType = $node->getDefaultAdminType();
+        $nodeAdminType = $this->container->get($node->getDefaultAdminType());
         if (!is_object($nodeAdminType) && is_string($nodeAdminType)) {
             $nodeAdminType = $this->container->get($nodeAdminType);
         }
@@ -575,8 +575,8 @@ class NodeAdminController extends Controller
         // Menu tab
         if (!$isStructureNode) {
             $menuWidget = new FormWidget();
-            $menuWidget->addType('menunodetranslation', new NodeMenuTabTranslationAdminType(), $nodeTranslation);
-            $menuWidget->addType('menunode', new NodeMenuTabAdminType(), $node);
+            $menuWidget->addType('menunodetranslation', $this->get('form.type.menutranslation'), $nodeTranslation);
+            $menuWidget->addType('menunode', $this->get('form.type.menu'), $node);
             $tabPane->addTab(new Tab('Menu', $menuWidget));
 
             $this->get('event_dispatcher')->dispatch(Events::ADAPT_FORM, new AdaptFormEvent($request, $tabPane, $page, $node, $nodeTranslation, $nodeVersion));

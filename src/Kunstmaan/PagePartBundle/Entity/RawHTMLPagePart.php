@@ -55,10 +55,10 @@ class RawHTMLPagePart extends AbstractPagePart
     }
 
     /**
-     * @return RawHTMLPagePartAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new RawHTMLPagePartAdminType();
+        return "kunstmaan_pagepart.form.type.raw_html_pagepart_admin";
     }
 }

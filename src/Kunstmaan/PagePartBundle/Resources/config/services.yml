@@ -1,5 +1,12 @@
 parameters:
 #    kunstmaan_k_page_part.example.class: Kunstmaan\PagePartBundle\Example
+    kunstmaan_pagepart.form.type.header_pagepart_admin.class: 'Kunstmaan\PagePartBundle\Form\HeaderPagePartAdminType'
+    kunstmaan_pagepart.form.type.line_pagepart_admin.class: 'Kunstmaan\PagePartBundle\Form\LinePagePartAdminType'
+    kunstmaan_pagepart.form.type.link_pagepart_admin.class: 'Kunstmaan\PagePartBundle\Form\LinkPagePartAdminType'
+    kunstmaan_pagepart.form.type.raw_html_pagepart_admin.class: 'Kunstmaan\PagePartBundle\Form\RawHTMLPagePartAdminType'
+    kunstmaan_pagepart.form.type.text_pagepart_admin.class: 'Kunstmaan\PagePartBundle\Form\TextPagePartAdminType'
+    kunstmaan_pagepart.form.type.toc_pagepart_admin.class: 'Kunstmaan\PagePartBundle\Form\TocPagePartAdminType'
+    kunstmaan_pagepart.form.type.to_top_pagepart_admin.class: 'Kunstmaan\PagePartBundle\Form\ToTopPagePartAdminType'
 
 services:
 #    kunstmaan_k_page_part.example:
@@ -48,3 +55,38 @@ services:
         arguments: ["@doctrine.orm.entity_manager", "@kernel"]
         tags:
             - { name: kernel.event_listener, event: kunstmaan_admin.postDeepCloneAndSave, method: postDeepCloneAndSave }
+
+    form.type.header_pagepart_admin:
+        class: "%kunstmaan_pagepart.form.type.header_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_pagepartbundle_headerpageparttype }
+
+    form.type.line_pagepart_admin:
+        class: "%kunstmaan_pagepart.form.type.line_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_pagepartbundle_linepageparttype }
+
+    form.type.link_pagepart_admin:
+        class: "%kunstmaan_pagepart.form.type.link_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_pagepartbundle_linkpageparttype }
+
+    form.type.raw_html_pagepart_admin:
+        class: "%kunstmaan_pagepart.form.type.raw_html_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_pagepartbundle_rawhtmlpageparttype }
+
+    form.type.text_pagepart_admin:
+        class: "%kunstmaan_pagepart.form.type.text_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_pagepartbundle_textpageparttype }
+
+    form.type.toc_pagepart_admin:
+        class: "%kunstmaan_pagepart.form.type.toc_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_pagepartbundle_tocpageparttype }
+
+    form.type.to_top_pagepart_admin:
+        class: "%kunstmaan_pagepart.form.type.to_top_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_pagepartbundle_totoppageparttype }

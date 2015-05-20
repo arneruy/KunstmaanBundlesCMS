@@ -67,10 +67,10 @@ class VideoPagePart extends AbstractPagePart
     }
 
     /**
-     * @return VideoPagePartAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new VideoPagePartAdminType();
+        return 'kunstmaan_mediabundle_videopageparttype';
     }
 }

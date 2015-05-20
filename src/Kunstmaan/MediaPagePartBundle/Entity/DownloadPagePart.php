@@ -68,10 +68,10 @@ class DownloadPagePart extends AbstractPagePart
     }
 
     /**
-     * @return DownloadPagePartAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new DownloadPagePartAdminType();
+        return 'kunstmaan_mediabundle_downloadpageparttype';
     }
 }

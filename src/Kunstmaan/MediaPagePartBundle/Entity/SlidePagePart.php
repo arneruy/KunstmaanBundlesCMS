@@ -67,10 +67,10 @@ class SlidePagePart extends AbstractPagePart
     }
 
     /**
-     * @return SlidePagePartAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new SlidePagePartAdminType();
+        return 'kunstmaan_mediabundle_slidepageparttype';
     }
 }

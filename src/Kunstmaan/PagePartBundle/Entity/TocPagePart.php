@@ -30,10 +30,10 @@ class TocPagePart extends AbstractPagePart
     }
 
     /**
-     * @return TocPagePartAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new TocPagePartAdminType();
+        return "kunstmaan_pagepart.form.type.toc_pagepart_admin";
     }
 }

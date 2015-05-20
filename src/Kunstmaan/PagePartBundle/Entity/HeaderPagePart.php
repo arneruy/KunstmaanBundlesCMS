@@ -95,10 +95,10 @@ class HeaderPagePart extends AbstractPagePart
     }
 
     /**
-     * @return HeaderPagePartAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new HeaderPagePartAdminType();
+        return "kunstmaan_pagepart.form.type.header_pagepart_admin";
     }
 }

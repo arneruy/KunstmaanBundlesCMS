@@ -2,6 +2,7 @@ parameters:
     kunstmaan_redirect.menu.adaptor.class: 'Kunstmaan\RedirectBundle\Helper\Menu\RedirectMenuAdaptor'
     kunstmaan_redirect.redirect_repository.class: 'Kunstmaan\RedirectBundle\Repository\RedirectRepository'
     kunstmaan_redirect.redirect.class: 'Kunstmaan\RedirectBundle\Entity\Redirect'
+    kunstmaan_redirect.form.type.redirect_admin.class: 'Kunstmaan\RedirectBundle\Form\RedirectAdminType'
 
 services:
     kunstmaan_redirect.menu.adaptor:
@@ -20,3 +21,8 @@ services:
         arguments: ["@kunstmaan_redirect.repositories.redirect"]
         tags:
             - { name: router, priority: 1 }
+
+    form.type.redirect_form:
+        class: "%kunstmaan_redirect.form.type.redirect_admin.class%"
+        tags:
+            - { name: form.type, alias: redirect_form }

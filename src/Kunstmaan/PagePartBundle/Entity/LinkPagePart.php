@@ -105,10 +105,10 @@ class LinkPagePart extends AbstractPagePart
     }
 
     /**
-     * @return LinkPagePartAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new LinkPagePartAdminType();
+        return "kunstmaan_pagepart.form.type.link_pagepart_admin";
     }
 }

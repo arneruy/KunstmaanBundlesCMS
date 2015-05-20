@@ -349,11 +349,11 @@ class NodeTranslation extends AbstractEntity
     }
 
     /**
-     * @return NodeTranslationAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new NodeTranslationAdminType();
+        return 'form.type.nodetranslation';
     }
 
     /**

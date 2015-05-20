@@ -1,0 +1,20 @@
+parameters:
+    kunstmaan_article.form.type.abstract_article_overview_page_admin.class: 'Kunstmaan\ArticleBundle\Form\AbstractArticleOverviewPageAdminType'
+    kunstmaan_article.form.type.abstract_article_page_admin.class: 'Kunstmaan\ArticleBundle\Form\AbstractArticlePageAdminType'
+    kunstmaan_article.form.type.abstract_author_admin.class: 'Kunstmaan\ArticleBundle\Form\AbstractAuthorAdminType'
+
+services:
+    form.type.AbstractArticleOverviewPage:
+    class: "%kunstmaan_article.form.type.abstract_article_overview_page_admin.class%"
+    tags:
+        - { name: form.type, alias: AbstractArticleOverviewPage }
+
+    form.type.AbstractArticlePage:
+    class: "%kunstmaan_article.form.type.abstract_article_page_admin.class%"
+    tags:
+        - { name: form.type, alias: AbstractArticlePage }
+
+    form.type.abstactauthor_form:
+    class: "%kunstmaan_article.form.type.abstract_author_admin.class%"
+    tags:
+        - { name: form.type, alias: abstactauthor_form }

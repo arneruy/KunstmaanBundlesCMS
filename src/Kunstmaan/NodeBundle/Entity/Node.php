@@ -395,11 +395,11 @@ class Node extends AbstractEntity implements GedmoNode
     }
 
     /**
-     * @return NodeAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new NodeAdminType();
+        return 'form.type.node';
     }
 
     /**

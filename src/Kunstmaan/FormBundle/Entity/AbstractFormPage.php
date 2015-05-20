@@ -174,11 +174,11 @@ abstract class AbstractFormPage extends AbstractPage implements FormPageInterfac
     /**
      * Returns the default backend form type for this form
      *
-     * @return AbstractType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new AbstractFormPageAdminType();
+        return 'form.type.formpage';
     }
 
     /**

@@ -1,1 +1,32 @@
+parameters:
+    kunstmaan_media_pagepart.form.type.audio_pagepart_admin.class: 'Kunstmaan\MediaPagePartBundle\Form\AudioPagePartAdminType'
+    kunstmaan_media_pagepart.form.type.download_pagepart_admin.class: 'Kunstmaan\MediaPagePartBundle\Form\DownloadPagePartAdminType'
+    kunstmaan_media_pagepart.form.type.image_pagepart_admin.class: 'Kunstmaan\MediaPagePartBundle\Form\ImagePagePartAdminType'
+    kunstmaan_media_pagepart.form.type.slide_pagepart_admin.class: 'Kunstmaan\MediaPagePartBundle\Form\SlidePagePartAdminType'
+    kunstmaan_media_pagepart.form.type.video_pagepart_admin.class: 'Kunstmaan\MediaPagePartBundle\Form\VideoPagePartAdminType'
 
+services:
+    form.type.kunstmaan_mediabundle_audiopageparttype:
+        class: "%kunstmaan_media_pagepart.form.type.audio_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_mediabundle_audiopageparttype }
+
+    form.type.kunstmaan_mediabundle_downloadpageparttype:
+        class: "%kunstmaan_media_pagepart.form.type.download_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_mediabundle_downloadpageparttype }
+
+    form.type.kunstmaan_mediabundle_imagepageparttype:
+        class: "%kunstmaan_media_pagepart.form.type.image_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_mediabundle_imagepageparttype }
+
+    form.type.kunstmaan_mediabundle_slidepageparttype:
+        class: "%kunstmaan_media_pagepart.form.type.slide_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_mediabundle_slidepageparttype }
+
+    form.type.kunstmaan_mediabundle_videopageparttype:
+        class: "%kunstmaan_media_pagepart.form.type.video_pagepart_admin.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_mediabundle_videopageparttype }

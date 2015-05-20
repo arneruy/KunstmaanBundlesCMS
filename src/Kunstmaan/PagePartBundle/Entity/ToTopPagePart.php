@@ -30,10 +30,10 @@ class ToTopPagePart extends AbstractPagePart
     }
 
     /**
-     * @return ToTopPagePartAdminType
+     * @return string
      */
     public function getDefaultAdminType()
     {
-        return new ToTopPagePartAdminType();
+        return "kunstmaan_pagepart.form.type.to_top_pagepart_admin";
     }
 }

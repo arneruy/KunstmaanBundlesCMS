@@ -233,7 +233,7 @@ class PagePartAdmin
 
         foreach ($this->pageParts as $pagePartRefId => $pagePart) {
             $data['pagepartadmin_' . $pagePartRefId] = $pagePart;
-            $adminType                               = $pagePart->getDefaultAdminType();
+            $adminType                               = $this->container->get($pagePart->getDefaultAdminType());
             if (!is_object($adminType) && is_string($adminType)) {
                 $adminType = $this->container->get($adminType);
             }
@@ -242,7 +242,7 @@ class PagePartAdmin
 
         foreach ($this->newPageParts as $newPagePartRefId => $newPagePart) {
             $data['pagepartadmin_' . $newPagePartRefId] = $newPagePart;
-            $adminType                                  = $newPagePart->getDefaultAdminType();
+            $adminType                                  = $this->container->get($newPagePart->getDefaultAdminType());
             if (!is_object($adminType) && is_string($adminType)) {
                 $adminType = $this->container->get($adminType);
             }

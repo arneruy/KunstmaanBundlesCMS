@@ -8,6 +8,13 @@ parameters:
     kunstmaan_admin.clone.listener.class: 'Kunstmaan\AdminBundle\EventListener\CloneListener'
     kunstmaan_admin.session_security.class: 'Kunstmaan\AdminBundle\EventListener\SessionSecurityListener'
     kunstmaan_admin.firewall.provider_key: 'main'
+    kunstmaan_admin.form.type.color.class: 'Kunstmaan\AdminBundle\Form\ColorType'
+    kunstmaan_admin.form.type.dashboard_configuration.class: 'Kunstmaan\AdminBundle\Form\DashboardConfigurationType'
+    kunstmaan_admin.form.type.group.class: 'Kunstmaan\AdminBundle\Form\GroupType'
+    kunstmaan_admin.form.type.range.class: 'Kunstmaan\AdminBundle\Form\RangeType'
+    kunstmaan_admin.form.type.role.class: 'Kunstmaan\AdminBundle\Form\RoleType'
+    kunstmaan_admin.form.type.user.class: 'Kunstmaan\AdminBundle\Form\UserType'
+    kunstmaan_admin.form.type.wysiwyg.class: 'Kunstmaan\AdminBundle\Form\WysiwygType'
 
 services:
     kunstmaan_admin.menubuilder:
@@ -122,21 +129,11 @@ services:
         class: Doctrine\Common\Cache\FilesystemCache
         arguments: ["%kernel.cache_dir%/fcache"]
 
-    kunstmaan_admin.form.type.color:
-        class: Kunstmaan\AdminBundle\Form\ColorType
-        tags:
-            - { name: form.type, alias: color }
-
     kunstmaan_admin.doctrine_mapping.listener:
         class: Kunstmaan\AdminBundle\EventListener\MappingListener
         arguments: ["%fos_user.model.user.class%"]
         tags:
             - { name: doctrine.event_listener, event: loadClassMetadata }
-
-    kunstmaan_admin.form.type.range:
-        class: Kunstmaan\AdminBundle\Form\RangeType
-        tags:
-            - { name: form.type, alias: range }
 
     kunstmaan_admin.session_security:
         class: "%kunstmaan_admin.session_security.class%"
@@ -145,7 +142,39 @@ services:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
             - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse, priority: -1000 }
 
-    kunstmaan_form.type.wysiwyg:
-        class: Kunstmaan\AdminBundle\Form\WysiwygType
+    form.type.color:
+        class: "%kunstmaan_admin.form.type.color.class%"
+        tags:
+            - { name: form.type, alias: color }
+
+    form.type.dashboardconfiguration:
+        class: "%kunstmaan_admin.form.type.dashboard_configuration.class%"
+        tags:
+            - { name: form.type, alias: dashboardconfiguration }
+
+    form.type.group:
+        class: "%kunstmaan_admin.form.type.group.class%"
+        tags:
+            - { name: form.type, alias: group }
+
+    form.type.range:
+        class: "%kunstmaan_admin.form.type.range.class%"
+        tags:
+            - { name: form.type, alias: range }
+
+    form.type.role:
+        class: "%kunstmaan_admin.form.type.role.class%"
+        tags:
+            - { name: form.type, alias: role }
+
+    form.type.user:
+        class: "%kunstmaan_admin.form.type.user.class%"
+        tags:
+            - { name: form.type, alias: user }
+
+    form.type.wysiwyg:
+        class: "%kunstmaan_admin.form.type.wysiwyg.class%"
         tags:
             - { name: form.type, alias: wysiwyg }
+
+

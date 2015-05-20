@@ -48,6 +48,7 @@ services:
         tags:
             - { name: form.type, alias: iconfont }
 
+
     kunstmaan_media.icon_font_manager:
         class: "%kunstmaan_media.icon_font_manager.class%"
         calls:
