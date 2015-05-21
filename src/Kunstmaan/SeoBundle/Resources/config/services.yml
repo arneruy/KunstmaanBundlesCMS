@@ -46,7 +46,7 @@ services:
         tags:
             -  { name: 'kunstmaan_admin.menu.adaptor' }
 
-    form.type.robots:
+    form.type.kunstmaanseobundle_settings_form_type:
         class: "%kunstmaan_seo.form.type.robots.class%"
         tags:
             - { name: form.type, alias: kunstmaanseobundle_settings_form_type }

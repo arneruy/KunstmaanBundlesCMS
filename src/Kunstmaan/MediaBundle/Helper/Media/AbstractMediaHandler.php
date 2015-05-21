@@ -40,7 +40,7 @@ abstract class AbstractMediaHandler
     abstract public function getType();
 
     /**
-     * @return AbstractType
+     * @return string
      */
     abstract public function getFormType();
 

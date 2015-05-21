@@ -4,6 +4,7 @@ namespace Kunstmaan\NodeBundle\Controller;
 
 use DateTime;
 use Kunstmaan\AdminBundle\Entity\BaseUser;
+use Kunstmaan\FormBundle\Form\AbstractFormPageAdminType;
 use Kunstmaan\NodeBundle\Form\NodeMenuTabTranslationAdminType;
 use Kunstmaan\NodeBundle\Form\NodeMenuTabAdminType;
 use InvalidArgumentException;
@@ -559,13 +560,13 @@ class NodeAdminController extends Controller
 
         // Building the form
         $propertiesWidget = new FormWidget();
-        $pageAdminType = $this->container->get($page->getDefaultAdminType());
+        $pageAdminType = $page->getDefaultAdminType();
         if (!is_object($pageAdminType) && is_string($pageAdminType)) {
             $pageAdminType = $this->container->get($pageAdminType);
         }
         $propertiesWidget->addType('main', $pageAdminType, $page);
 
-        $nodeAdminType = $this->container->get($node->getDefaultAdminType());
+        $nodeAdminType = $node->getDefaultAdminType();
         if (!is_object($nodeAdminType) && is_string($nodeAdminType)) {
             $nodeAdminType = $this->container->get($nodeAdminType);
         }

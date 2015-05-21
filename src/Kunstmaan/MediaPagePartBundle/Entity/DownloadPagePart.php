@@ -72,6 +72,6 @@ class DownloadPagePart extends AbstractPagePart
      */
     public function getDefaultAdminType()
     {
-        return 'kunstmaan_mediabundle_downloadpageparttype';
+        return 'form.type.kunstmaan_mediabundle_downloadpageparttype';
     }
 }

@@ -56,37 +56,37 @@ services:
         tags:
             - { name: kernel.event_listener, event: kunstmaan_admin.postDeepCloneAndSave, method: postDeepCloneAndSave }
 
-    form.type.header_pagepart_admin:
+    form.type.kunstmaan_pagepartbundle_headerpageparttype:
         class: "%kunstmaan_pagepart.form.type.header_pagepart_admin.class%"
         tags:
             - { name: form.type, alias: kunstmaan_pagepartbundle_headerpageparttype }
 
-    form.type.line_pagepart_admin:
+    form.type.kunstmaan_pagepartbundle_linepageparttype:
         class: "%kunstmaan_pagepart.form.type.line_pagepart_admin.class%"
         tags:
             - { name: form.type, alias: kunstmaan_pagepartbundle_linepageparttype }
 
-    form.type.link_pagepart_admin:
+    form.type.kunstmaan_pagepartbundle_linkpageparttype:
         class: "%kunstmaan_pagepart.form.type.link_pagepart_admin.class%"
         tags:
             - { name: form.type, alias: kunstmaan_pagepartbundle_linkpageparttype }
 
-    form.type.raw_html_pagepart_admin:
+    form.type.kunstmaan_pagepartbundle_rawhtmlpageparttype:
         class: "%kunstmaan_pagepart.form.type.raw_html_pagepart_admin.class%"
         tags:
             - { name: form.type, alias: kunstmaan_pagepartbundle_rawhtmlpageparttype }
 
-    form.type.text_pagepart_admin:
+    form.type.kunstmaan_pagepartbundle_textpageparttype:
         class: "%kunstmaan_pagepart.form.type.text_pagepart_admin.class%"
         tags:
             - { name: form.type, alias: kunstmaan_pagepartbundle_textpageparttype }
 
-    form.type.toc_pagepart_admin:
+    form.type.kunstmaan_pagepartbundle_tocpageparttype:
         class: "%kunstmaan_pagepart.form.type.toc_pagepart_admin.class%"
         tags:
             - { name: form.type, alias: kunstmaan_pagepartbundle_tocpageparttype }
 
-    form.type.to_top_pagepart_admin:
+    form.type.kunstmaan_pagepartbundle_totoppageparttype:
         class: "%kunstmaan_pagepart.form.type.to_top_pagepart_admin.class%"
         tags:
             - { name: form.type, alias: kunstmaan_pagepartbundle_totoppageparttype }

@@ -32,13 +32,13 @@ services:
         tags:
           -  { name: kunstmaan_admin.menu.adaptor }
 
-    form.type.tags:
+    form.type.kunstmaan_taggingbundle_tags:
         class: Kunstmaan\TaggingBundle\Form\TagsAdminType
         arguments: ["@kuma_tagging.tag_manager"]
         tags:
             - { name: form.type, alias: kunstmaan_taggingbundle_tags }
 
-    form.type.tag:
+    form.type.tag_admin_form:
         class: '%kunstmaan_tagging.form.type.tag_admin.class%'
         tags:
-            - { name: form.type, alias: tag_admin }
+            - { name: form.type, alias: tag_admin_form }

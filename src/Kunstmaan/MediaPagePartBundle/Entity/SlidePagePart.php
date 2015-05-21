@@ -71,6 +71,6 @@ class SlidePagePart extends AbstractPagePart
      */
     public function getDefaultAdminType()
     {
-        return 'kunstmaan_mediabundle_slidepageparttype';
+        return 'form.type.kunstmaan_mediabundle_slidepageparttype';
     }
 }

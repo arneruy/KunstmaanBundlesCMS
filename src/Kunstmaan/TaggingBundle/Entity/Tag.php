@@ -128,7 +128,7 @@ class Tag extends BaseTag
 
     public function getDefaultAdminType()
     {
-        return 'form.type.tag';
+        return 'form.type.tag_admin_form';
     }
 
     public function __toString()

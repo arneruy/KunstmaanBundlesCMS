@@ -9,6 +9,12 @@ parameters:
     kunstmaan_media.icon_font.default_loader.class: 'Kunstmaan\MediaBundle\Helper\IconFont\DefaultIconFontLoader'
     kunstmaan_media.media_creator_service.class: 'Kunstmaan\MediaBundle\Helper\Services\MediaCreatorService'
     kunstmaan_media.mimetype_guesser.factory.class: 'Kunstmaan\MediaBundle\Helper\MimeTypeGuesserFactory'
+    kunstmaan_media.form.type.file.class: 'Kunstmaan\MediaBundle\Form\File\FileType'
+    kunstmaan_media.form.type.remote_audio.class: 'Kunstmaan\MediaBundle\Form\RemoteAudio\RemoteAudioType'
+    kunstmaan_media.form.type.remote_slide.class: 'Kunstmaan\MediaBundle\Form\RemoteSlide\RemoteSlideType'
+    kunstmaan_media.form.type.remote_video.class: 'Kunstmaan\MediaBundle\Form\RemoteVideo\RemoteVideoType'
+    kunstmaan_media.form.type.bulk_upload.class: 'Kunstmaan\MediaBundle\Form\BulkUploadType'
+    kunstmaan_media.form.type.folder.class: 'Kunstmaan\MediaBundle\Form\FolderType'
 
 services:
     liip_imagine.data.loader.stream.profile_photos:
@@ -92,3 +98,33 @@ services:
         class: Kunstmaan\MediaBundle\Command\RebuildFolderTreeCommand
         calls:
             - [setContainer, ["@service_container"] ]
+
+    form.type.kunstmaan_mediabundle_filetype:
+        class: "%kunstmaan_media.form.type.file.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_mediabundle_filetype }
+
+    form.type.kunstmaan_mediabundle_audiotype:
+        class: "%kunstmaan_media.form.type.remote_audio.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_mediabundle_audiotype }
+
+    form.type.kunstmaan_mediabundle_slidetype:
+        class: "%kunstmaan_media.form.type.remote_slide.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_mediabundle_slidetype }
+
+    form.type.kunstmaan_mediabundle_videotype:
+        class: "%kunstmaan_media.form.type.remote_video.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_mediabundle_videotype }
+
+    form.type.kunstmaan_mediabundle_bulkupload:
+        class: "%kunstmaan_media.form.type.bulk_upload.class%"
+        tags:
+            - { name: form.type, alias: kunstmaan_mediabundle_bulkupload }
+
+    form.type.kunstmaan_mediabundle_FolderType:
+        class: "%kunstmaan_media.form.type.file.class%"
+        tags:
+            -  { name: form.type, alias: kunstmaan_mediabundle_FolderType }

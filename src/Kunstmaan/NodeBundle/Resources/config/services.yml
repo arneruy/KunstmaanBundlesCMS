@@ -154,7 +154,7 @@ services:
     form.type.node:
         class: "%kunstmaan_node.form.type.node_admin.class%"
         tags:
-            - { name: form.type, alias: node_admin }
+            - { name: form.type, alias: node }
 
     form.type.menu:
         class: "%kunstmaan_node.form.type.node_menu_tab_admin.class%"

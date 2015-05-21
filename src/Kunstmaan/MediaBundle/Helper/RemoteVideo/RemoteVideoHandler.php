@@ -52,7 +52,7 @@ class RemoteVideoHandler extends AbstractMediaHandler
     }
 
     /**
-     * @return RemoteVideoType
+     * @return string
      */
     public function getFormType()
     {

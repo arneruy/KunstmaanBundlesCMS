@@ -71,6 +71,6 @@ class AudioPagePart extends AbstractPagePart
      */
     public function getDefaultAdminType()
     {
-        return 'kunstmaan_mediabundle_audiopageparttype';
+        return 'form.type.kunstmaan_mediabundle_audiopageparttype';
     }
 }

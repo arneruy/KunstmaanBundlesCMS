@@ -91,11 +91,11 @@ class FileHandler extends AbstractMediaHandler
     }
 
     /**
-     * @return FileType
+     * @return string
      */
     public function getFormType()
     {
-        return new FileType();
+        return 'kunstmaan_mediabundle_filetype';
     }
 
     /**

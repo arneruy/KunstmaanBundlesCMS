@@ -111,12 +111,12 @@ services:
         calls:
             - [setMigrationsService, [@kunstmaan_translator.service.migrations.migrations]]
 
-    kunstmaan_translator.form.type.text_with_locale_admin:
+    form.type.text_with_locale:
         class: "%kunstmaan_translator.form.type.text_with_locale_admin.class%"
         tags:
-            - { name: form.type, alias: text_with_locale_admin }
+            - { name: form.type, alias: text_with_locale }
 
-    kunstmaan_translator.form.type.translation_admin:
+    form.type.translation:
         class: "%kunstmaan_translator.form.type.translation_admin.class%"
         tags:
-            - { name: form.type, alias: translation_admin }
+            - { name: form.type, alias: translation }

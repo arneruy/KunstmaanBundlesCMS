@@ -60,6 +60,6 @@ class TextPagePart extends AbstractPagePart
      */
     public function getDefaultAdminType()
     {
-        return "kunstmaan_pagepart.form.type.text_pagepart_admin";
+        return "form.type.kunstmaan_pagepartbundle_textpageparttype";
     }
 }
