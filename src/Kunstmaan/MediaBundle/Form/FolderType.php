@@ -20,10 +20,14 @@ class FolderType extends AbstractType
 
     /**
      * @param Folder $folder The folder
+     *
+     * @return FolderType
      */
-    public function __construct(Folder $folder = null)
+    public function setFolder(Folder $folder = null)
     {
         $this->folder = $folder;
+
+        return $this;
     }
 
     /**

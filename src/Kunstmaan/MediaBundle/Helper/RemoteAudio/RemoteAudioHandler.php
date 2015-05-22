@@ -54,7 +54,7 @@ class RemoteAudioHandler extends AbstractMediaHandler
      */
     public function getFormType()
     {
-        return 'kunstmaan_mediabundle_audiotype';
+        return 'form.type.kunstmaan_mediabundle_audiotype';
     }
 
     /**

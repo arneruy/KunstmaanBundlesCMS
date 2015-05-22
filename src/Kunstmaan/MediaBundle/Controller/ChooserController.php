@@ -115,7 +115,8 @@ class ChooserController extends Controller
 
         $sub = new Folder();
         $sub->setParent($folder);
-        $subForm  = $this->createForm(new FolderType($sub), $sub);
+        //$subForm = $this->createForm($this->get('kunstmaan_mediabundle_FolderType'), $sub);
+        $subForm  = $this->createForm($this->get('kunstmaan_mediabundle_FolderType')->setFolder($sub), $sub);
 
         $linkChooserLink = null;
         if (!empty($linkChooser)) {

@@ -81,10 +81,10 @@ services:
         tags:
             - { name: form.type, alias: kunstmaan_formbundle_fileuploadpageparttype }
 
-    form.type.kunstmaan_formbundle_singlelinetextpageparttype:
+    form.type.kunstmaan_formbundle_multilinetextpageparttype:
         class: "%kunstmaan_form.form.type.multi_line_text_pagepart_admin.class%"
         tags:
-            - { name: form.type, alias: kunstmaan_formbundle_singlelinetextpageparttype }
+            - { name: form.type, alias: kunstmaan_formbundle_multilinetextpageparttype }
 
     form.type.kunstmaan_formbundle_singlelinetextpageparttype:
         class: "%kunstmaan_form.form.type.single_line_text_pagepart_admin.class%"
@@ -96,10 +96,10 @@ services:
         tags:
             - { name: form.type, alias: kunstmaan_formbundle_stringformsubmissiontype }
 
-    form.type.kunstmaan_formbundle_singlelinetextpageparttype:
+    form.type.kunstmaan_formbundle_submitbuttonpageparttype:
         class: "%kunstmaan_form.form.type.submit_button_pagepart_admin.class%"
         tags:
-            - { name: form.type, alias: kunstmaan_formbundle_singlelinetextpageparttype }
+            - { name: form.type, alias: kunstmaan_formbundle_submitbuttonpageparttype }
 
     form.kunstmaan_formbundle_stringformsubmissiontype:
         class: "%kunstmaan_form.form.type.text_form_submission.class%"

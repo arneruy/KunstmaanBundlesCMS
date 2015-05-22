@@ -83,7 +83,7 @@ class TranslatorController extends AdminListController
             $translation->addText($locale, '');
         }
 
-        $form = $this->createForm(new TranslationAdminType('add'), $translation);
+        $form = $this->createForm($this->get('form.type.translation')->setIntention('add'), $translation);
         if ('POST' == $request->getMethod()) {
             $form->handleRequest($request);
 
@@ -160,7 +160,7 @@ class TranslatorController extends AdminListController
             }
         }
 
-        $form = $this->createForm(new TranslationAdminType('edit'), $translation);
+        $form = $this->createForm($this->get('form.type.translation')->setIntention('edit'), $translation);
 
         if ('POST' == $request->getMethod()) {
             $form->handleRequest($request);

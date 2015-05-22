@@ -14,13 +14,15 @@ class TranslationAdminType extends AbstractType
     private $intention;
 
     /**
-     * Constructor
-     *
      * @param string $intention
+     *
+     * @return TranslationAdminType
      */
-    public function __construct($intention = 'add')
+    public function setIntention($intention = 'add')
     {
         $this->intention = $intention;
+
+        return $this;
     }
 
     /**

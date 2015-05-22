@@ -95,7 +95,7 @@ class FileHandler extends AbstractMediaHandler
      */
     public function getFormType()
     {
-        return 'kunstmaan_mediabundle_filetype';
+        return 'form.type.kunstmaan_mediabundle_filetype';
     }
 
     /**

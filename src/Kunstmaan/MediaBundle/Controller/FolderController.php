@@ -54,9 +54,8 @@ class FolderController extends Controller
 
         $sub = new Folder();
         $sub->setParent($folder);
-        $subForm  = $this->createForm(new FolderType($sub), $sub);
-        $editForm = $this->createForm(new FolderType($folder), $folder);
-
+        $subForm  = $this->createForm($this->get('kunstmaan_mediabundle_FolderType')->setFolder($sub), $sub);
+        $editForm = $this->createForm($this->get('kunstmaan_mediabundle_FolderType')->setFolder($folder), $folder);
         if ($request->isMethod('POST')) {
             $editForm->handleRequest($request);
             if ($editForm->isValid()) {

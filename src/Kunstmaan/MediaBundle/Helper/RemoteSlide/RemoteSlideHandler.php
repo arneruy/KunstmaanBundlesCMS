@@ -40,7 +40,7 @@ class RemoteSlideHandler extends AbstractMediaHandler
      */
     public function getFormType()
     {
-        return 'kunstmaan_mediabundle_slidetype';
+        return 'form.type.kunstmaan_mediabundle_slidetype';
     }
 
     /**

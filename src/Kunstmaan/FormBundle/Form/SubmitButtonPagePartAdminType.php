@@ -26,7 +26,7 @@ class SubmitButtonPagePartAdminType extends AbstractType
      */
     public function getName()
     {
-        return 'kunstmaan_formbundle_singlelinetextpageparttype';
+        return 'kunstmaan_formbundle_submitbuttonpageparttype';
     }
 
     /**

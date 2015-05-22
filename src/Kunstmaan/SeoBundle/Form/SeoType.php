@@ -27,7 +27,7 @@ class SeoType extends AbstractType
 		    )
 		))
                 //->add('metaAuthor', null, array('label' => 'Meta author'))
-                ->add('metaAuthor', 'kunstmaan_pagepartbundle_totoppageparttype')
+                ->add('metaAuthor', 'kunstmaan_mediabundle_bulkupload')
                 ->add('metaDescription', null, array('label' => 'Meta description'))
                 ->add('metaKeywords', null, array('label' => 'Meta keywords'))
                 ->add('metaRobots', null, array('label' => 'Meta robots'))
