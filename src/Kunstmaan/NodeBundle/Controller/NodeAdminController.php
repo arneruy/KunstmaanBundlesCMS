@@ -4,9 +4,6 @@ namespace Kunstmaan\NodeBundle\Controller;
 
 use DateTime;
 use Kunstmaan\AdminBundle\Entity\BaseUser;
-use Kunstmaan\FormBundle\Form\AbstractFormPageAdminType;
-use Kunstmaan\NodeBundle\Form\NodeMenuTabTranslationAdminType;
-use Kunstmaan\NodeBundle\Form\NodeMenuTabAdminType;
 use InvalidArgumentException;
 
 use Doctrine\ORM\EntityManager;

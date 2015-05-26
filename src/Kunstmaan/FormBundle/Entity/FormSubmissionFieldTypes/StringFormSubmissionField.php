@@ -23,7 +23,7 @@ class StringFormSubmissionField extends FormSubmissionField
     /**
      * Returns the default form type for this FormSubmissionField
      *
-     * @return String FormSubmissionType
+     * @return String
      */
     public function getDefaultAdminType()
     {
