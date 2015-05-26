@@ -24,15 +24,21 @@ class RemoteVideoHandler extends AbstractMediaHandler
      * @var array
      */
     protected $configuration = array();
+    /**
+     * @var ContainerInterface
+     */
+    protected $container;
 
     /**
      * Constructor. Takes the configuration of the RemoveVideoHandler
-     * @param array $configuration
+     * @param array              $configuration
+     * @param ContainerInterface $container
      */
-    public function __construct($priority, $configuration = array())
+    public function __construct($priority, $configuration = array(), $container)
     {
         parent::__construct($priority);
         $this->configuration = $configuration;
+        $this->container = $container;
     }
 
     /**
@@ -56,7 +62,7 @@ class RemoteVideoHandler extends AbstractMediaHandler
      */
     public function getFormType()
     {
-        return new RemoteVideoType($this->configuration);
+        return $this->container->get('form.type.kunstmaan_mediabundle_videotype')->setConfiguration($this->configuration);
     }
 
     /**

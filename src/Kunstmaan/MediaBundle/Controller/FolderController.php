@@ -54,8 +54,8 @@ class FolderController extends Controller
 
         $sub = new Folder();
         $sub->setParent($folder);
-        $subForm  = $this->createForm($this->get('kunstmaan_mediabundle_FolderType')->setFolder($sub), $sub);
-        $editForm = $this->createForm($this->get('kunstmaan_mediabundle_FolderType')->setFolder($folder), $folder);
+        $subForm  = $this->createForm($this->get('form.type.kunstmaan_mediabundle_FolderType')->setFolder($sub), $sub);
+        $editForm = $this->createForm($this->get('form.type.kunstmaan_mediabundle_FolderType')->setFolder($folder), $folder);
         if ($request->isMethod('POST')) {
             $editForm->handleRequest($request);
             if ($editForm->isValid()) {
@@ -148,7 +148,7 @@ class FolderController extends Controller
         $parent = $em->getRepository('KunstmaanMediaBundle:Folder')->getFolder($folderId);
         $folder = new Folder();
         $folder->setParent($parent);
-        $form = $this->createForm(new FolderType(), $folder);
+        $form = $this->createForm($this->get('form.type.kunstmaan_mediabundle_FolderType')->setFolder($folder));
         if ($request->isMethod('POST')) {
             $form->handleRequest($request);
             if ($form->isValid()) {

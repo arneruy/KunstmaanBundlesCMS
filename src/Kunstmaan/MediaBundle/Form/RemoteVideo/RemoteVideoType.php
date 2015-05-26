@@ -22,12 +22,15 @@ class RemoteVideoType extends AbstractType
     protected $configuration = array();
 
     /**
-     * Constructor, gets the RemoteVideo configuration
      * @param array $configuration
+     *
+     * @return RemoteVideoType
      */
-    public function __construct($configuration = array())
+    public function setConfiguration($configuration = array())
     {
         $this->configuration = $configuration;
+
+        return $this;
     }
 
     /**

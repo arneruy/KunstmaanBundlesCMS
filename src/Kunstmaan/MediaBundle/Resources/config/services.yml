@@ -124,6 +124,6 @@ services:
             - { name: form.type, alias: kunstmaan_mediabundle_bulkupload }
 
     form.type.kunstmaan_mediabundle_FolderType:
-        class: "%kunstmaan_media.form.type.file.class%"
+        class: "%kunstmaan_media.form.type.folder.class%"
         tags:
             -  { name: form.type, alias: kunstmaan_mediabundle_FolderType }
